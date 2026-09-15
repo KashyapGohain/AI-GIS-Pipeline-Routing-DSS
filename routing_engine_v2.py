@@ -68,14 +68,6 @@ BALANCED_COST_PATH = DATA_DIR / "balanced_cost_surface.npy"
 SHORTEST_FEASIBLE_PATH = DATA_DIR / "shortest_feasible_cost_surface.npy"
 DEM_PATH = DATA_DIR / "DEM_ASSAM.tif"
 
-if not os.path.exists(DEM_PATH):
-
-    DEM_PATH = os.path.join(
-        BASE_DIR,
-        "DEM_ASSAM.tif"
-    )
-
-
 # ============================================================
 # PATHFINDING V6
 # ============================================================
