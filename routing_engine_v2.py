@@ -72,26 +72,7 @@ DEM_PATH = DATA_DIR / "DEM_ASSAM.tif"
 # PATHFINDING V6
 # ============================================================
 
-if CODES_DIR not in sys.path:
-
-    sys.path.insert(
-        0,
-        CODES_DIR
-    )
-
-
-try:
-
-    from pathfinding_v6 import AStar
-
-except ImportError as e:
-
-    raise ImportError(
-        "\nCould not import pathfinding_v6.py.\n"
-        f"Expected location:\n{CODES_DIR}\n\n"
-        f"Original error:\n{e}"
-    )
-
+from pathfinding_v6 import AStar
 
 # ============================================================
 # GEODESIC
