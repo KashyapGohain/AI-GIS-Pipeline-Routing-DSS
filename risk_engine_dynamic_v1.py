@@ -31,43 +31,21 @@ import math
 import numpy as np
 import pandas as pd
 import rasterio
-
+from pathlib import Path
 
 # ============================================================
 # PROJECT PATHS
 # ============================================================
 
-BASE_DIR = r"I:/Kashyap/Route"
+PROJECT_DIR = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_DIR / "data"
+OUTPUT_DIR = PROJECT_DIR / "outputs"
 
-CODES_DIR = os.path.join(
-    BASE_DIR,
-    "codes"
-)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-LULC_PATH = os.path.join(
-    BASE_DIR,
-    "LULC",
-    "LULC_FINAL.tif"
-)
 
-DEM_PATH = os.path.join(
-    BASE_DIR,
-    "DEM",
-    "DEM_ASSAM.tif"
-)
-
-if not os.path.exists(DEM_PATH):
-
-    DEM_PATH = os.path.join(
-        BASE_DIR,
-        "DEM_ASSAM.tif"
-    )
-
-OUTPUT_DIR = os.path.join(
-    BASE_DIR,
-    "OUTPUT",
-    "dashboard"
-)
+LULC_PATH = DATA_DIR / "LULC_FINAL.tif"
+DEM_PATH = DATA_DIR / "DEM_ASSAM.tif"
 
 
 # ============================================================
