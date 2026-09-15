@@ -12,13 +12,10 @@ from streamlit_folium import st_folium
 # ============================================================
 # PROJECT PATHS
 # ============================================================
-DASHBOARD_DIR = Path(__file__).resolve().parent
-BASE_DIR = DASHBOARD_DIR.parent.parent
-CODES_DIR = BASE_DIR / "codes"
+PROJECT_DIR = Path(__file__).resolve().parent
 
-for p in (DASHBOARD_DIR, CODES_DIR):
-    if str(p) not in sys.path:
-        sys.path.insert(0, str(p))
+if str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
 
 # ============================================================
 # EXISTING PROJECT ENGINES
