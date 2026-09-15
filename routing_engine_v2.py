@@ -43,70 +43,30 @@ import time
 import numpy as np
 import rasterio
 from pyproj import Geod, Transformer
-
+from pathlib import Path
 
 # ============================================================
 # PROJECT PATHS
 # ============================================================
+PROJECT_DIR = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_DIR / "data"
+OUTPUT_DIR = PROJECT_DIR / "outputs"
 
-BASE_DIR = r"I:/Kashyap/Route"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-CODES_DIR = os.path.join(
-    BASE_DIR,
-    "codes"
-)
-
-MULTI_CRITERIA_DIR = os.path.join(
-    CODES_DIR,
-    "multi_criteria"
-)
-
-OUTPUT_DIR = os.path.join(
-    BASE_DIR,
-    "OUTPUT",
-    "dashboard"
-)
 
 
 # ============================================================
 # INPUT FILES
 # ============================================================
 
-FEATURE_PATH = os.path.join(
-    CODES_DIR,
-    "feature_stack.npy"
-)
-
-BASE_COST_PATH = os.path.join(
-    CODES_DIR,
-    "cost_surface.npy"
-)
-
-ENVIRONMENTAL_COST_PATH = os.path.join(
-    MULTI_CRITERIA_DIR,
-    "environmental_cost_surface.npy"
-)
-
-MINIMUM_COST_PATH = os.path.join(
-    MULTI_CRITERIA_DIR,
-    "minimum_cost_surface.npy"
-)
-
-BALANCED_COST_PATH = os.path.join(
-    MULTI_CRITERIA_DIR,
-    "balanced_cost_surface.npy"
-)
-
-SHORTEST_FEASIBLE_PATH = os.path.join(
-    MULTI_CRITERIA_DIR,
-    "shortest_feasible_cost_surface.npy"
-)
-
-DEM_PATH = os.path.join(
-    BASE_DIR,
-    "DEM",
-    "DEM_ASSAM.tif"
-)
+FEATURE_PATH = DATA_DIR / "feature_stack.npy"
+BASE_COST_PATH = DATA_DIR / "cost_surface.npy"
+MINIMUM_COST_PATH = DATA_DIR / "minimum_cost_surface.npy"
+ENVIRONMENTAL_COST_PATH = DATA_DIR / "environmental_cost_surface.npy"
+BALANCED_COST_PATH = DATA_DIR / "balanced_cost_surface.npy"
+SHORTEST_FEASIBLE_PATH = DATA_DIR / "shortest_feasible_cost_surface.npy"
+DEM_PATH = DATA_DIR / "DEM_ASSAM.tif"
 
 if not os.path.exists(DEM_PATH):
 
