@@ -36,30 +36,16 @@ import json
 
 import numpy as np
 import pandas as pd
-
+from pathlib import Path
 
 # ============================================================
 # PROJECT PATHS
 # ============================================================
 
-BASE_DIR = r"I:/Kashyap/Route"
+PROJECT_DIR = Path(__file__).resolve().parent
+OUTPUT_DIR = PROJECT_DIR / "outputs"
 
-CODES_DIR = os.path.join(
-    BASE_DIR,
-    "codes"
-)
-
-DASHBOARD_DIR = os.path.join(
-    CODES_DIR,
-    "dashboard"
-)
-
-OUTPUT_DIR = os.path.join(
-    BASE_DIR,
-    "OUTPUT",
-    "dashboard"
-)
-
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
 # DECISION PROFILES
